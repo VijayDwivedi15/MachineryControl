@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Jain Machinery</title>
+    <meta charset="utf-8">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <![endif]-->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href="~/Design/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Design/css/animations.css" rel="stylesheet" />
+    <link href="~/Design/css/fonts.css" rel="stylesheet" />
+    <link href="~/Design/css/main.css" rel="stylesheet" />
+    <link href="~/Design/css/shop.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="~/Design/jainmachinelogo.png">
+    <script src="~/Design/js/vendor/modernizr-2.6.2.min.js"></script>
+
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="preloader_image"></div>
+    </div>
+    <!-- search modal -->
+    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="rt-icon2-cross2"></i>
+            </span>
+        </button>
+        <div class="widget widget_search">
+            <form method="get" class="searchform search-form form-inline" action="http://webdesign-finder.com/html/electrix/">
+                <div class="form-group bottommargin_0"> <input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input"> </div> <button type="submit" class="theme_button">Search</button>
+            </form>
+        </div>
+    </div>
+    <!-- Unyson messages modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+        <div class="fw-messages-wrap ls with_padding">
+            <!-- Uncomment this UL with LI to show messages in modal popup to your user: -->
+            <!--
+            <ul class="list-unstyled">
+                <li>Message To User</li>
+            </ul>
+            -->
+        </div>
+    </div>
+    <!-- eof .modal -->
+    <!-- wrappers for visual page editor and boxed version of template -->
+    <div id="canvas">
+        <div id="box_wrapper">
+            <!-- template sections -->
+            @*<section class="page_topline ls section_padding_15">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12 col-md-push-4 text-center">
+                            <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a> <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a> <a class="social-icon color-icon soc-google" href="#" title="Twitter"></a> <a class="social-icon color-icon soc-linkedin"
+                                                                                                                                                                                                                                                                    href="#" title="Twitter"></a> <a class="social-icon color-icon soc-youtube" href="#" title="Youtube"></a>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-md-pull-4 text-center text-md-left">
+                            <div class="inline-content small-text">
+                                <p> <i class="fa fa-phone grey rightpadding_5" aria-hidden="true"></i> 1-888-123-4567 </p>
+                                <p class="greylinks"> <i class="fa fa-pencil grey rightpadding_5" aria-hidden="true"></i> <a href="mailto:electrcs@gmail.com">jainmachine@gmail.com</a> </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>*@
+
+            
+
+
+
+
+
+
+            <div class=" ">
+                @RenderBody()
+                <hr />
+
+            </div>
+
+
+            <footer class="page_footer ds color section_padding_top_100 section_padding_bottom_65 table_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 text-center text-sm-left">
+                            <div class="widget widget_text">
+                                <a href="index.html" class="logo vertical_logo">
+                                    <h3> Jain Machiner<span class="highlight">Y</span> </h3> 
+                                </a>
+                                <p>From Last 15 Years We are the leading seller of every kind of machinery products like Agricultural, food Processing, Agro and more in Raipur. </p>
+
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-6 text-center text-sm-left">
+                            <div class="widget widget_twitter">
+                                <h4 class="widget-title highlight2">Products</h4>
+                               <p>Agricultural</p>
+                                <p>Agro And Pumps</p>
+                                <p>Food Processing</p>
+                                <p>Motor and Blower</p>
+                                <p>Rice Mill and Chaff Cutter</p>
+                               
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-6 text-center text-sm-left">
+                            <div class="widget widget_text">
+                                <h4 class="widget-title highlight">Contacts</h4>
+                                <table class="highlightlinks">
+                                    <tbody>
+                                        <tr>
+                                            <td>Address:</td>
+                                            <td> Near Deshbhandu School Station Road - Raipur, Chhattisgarh 492009</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone:</td>
+                                            <td>0771-4020352 <br /> 9165184444</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email:</td>
+                                            <td><a href="mailto:electrcs@gmail.com">jainmachinery.raipur@gmail.com</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </footer>
+            <section class="ds color page_copyright section_padding_15 with_top_border_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <p class="small-text big">&copy; Copyright 2019-20. All Rights Reserved. Developed By- <a href="http://www.awizomtech.com/" target="_blank" style="color:#0094ff">Awizom Tech Bytes Pvt. Ltd. Raipur</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            @*@Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)*@
+
+            <script src="~/Design/js/compressed.js"></script>
+            <script src="~/Design/js/main.js"></script>
+            <script src="~/Design/js/switcher.js"></script>
+
+
+           
+
+</body>
+</html>

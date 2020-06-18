@@ -1,0 +1,272 @@
+﻿@using JainMachinery.Models;
+@using JainMachinery.DAL;
+
+@{
+    ViewBag.Title = "Contact";
+    List<Contact> contact = ViewData["UserContact"] as List<Contact>;
+}
+
+<header class="page_header header_white toggler_xs_right section_padding_25">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 display_table">
+                <div class="header_left_logo display_table_cell">
+                    <a href="@Url.Action("Index","Home")" class="logo top_logo">
+
+                        <h3 style="font-size:xx-large"> <img src="~/Design/jainmachinelogo.png" style="height:60px;width:100px;" /> Jain Machiner<span class="highlight">Y</span> </h3>
+
+                    </a>
+                </div>
+                <div class="header_mainmenu display_table_cell text-center">
+                    <!-- main nav start -->
+                    <nav class="mainmenu_wrapper">
+                        <ul class="mainmenu nav sf-menu">
+                            <li>
+                                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i>   Home</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("About", "Home")"> <i class="fa fa-user"></i>  About</a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("Products","Home")"> <i class="fa fa-cogs"></i> Products</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ProductDemo","Home")"> <i class="fa fa-play"></i> Product Demo</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ProductBrochures", "Home")"> <i class="fa fa-file-pdf-o"></i>Brochures</a>
+                            </li>
+
+                            <li class="active">
+                                <a href="@Url.Action("Contact","Home")"> <i class="fa fa-map-marker"></i>  Contacts</a>
+                            </li>
+                            <!-- eof contacts -->
+                        </ul>
+                    </nav>
+                    <!-- eof main nav -->
+                    <!-- header toggler --><span class="toggle_menu"><span></span></span>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section class="" style="background-image: url('../Design/contactbanner.jpg'); height:500px;">
+  
+</section>
+@*<img src="~/Design/contactbanner.jpg" />*@
+<section class="ls columns_padding_25 section_padding_top_100 section_padding_bottom_100" style="margin-top:-200px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="module-header">Contact Form</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 to_animate" data-animation="scaleAppear">
+
+                <form class="contact-form columns_padding_5" action="#">
+                    @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "Contact", role = "form" }))
+                    {
+                        <div class="col-sm-6">
+                            <div class="form-group"> <label for="name">Full Name <span class="required">*</span></label> <i class="fa fa-user highlight2" aria-hidden="true"></i> <input type="text" aria-required="true" size="30" value="" name="name" id="Name" required class="form-control" placeholder="Full Name">										</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group"> <label for="phone">Phone Number<span class="required">*</span></label> <i class="fa fa-phone highlight2" aria-hidden="true"></i> <input type="text" aria-required="true" size="30" value="" maxlength="10" onkeypress="javascript:return isNumber(event)" name="phone" id="MobileNo" class="form-control" placeholder="Phone Number">										</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group"> <label for="email">Email address<span class="required">*</span></label> <i class="fa fa-envelope highlight2" aria-hidden="true"></i> <input type="email" aria-required="true" size="30" value="" name="email" id="Email" class="form-control" placeholder="Email Address">										</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group"> <label for="subject">Company Name<span class="required">*</span></label> <i class="fa fa-flag highlight2" aria-hidden="true"></i> <input type="text" aria-required="true" size="30" value="" name="Company" id="CompanyName" class="form-control" placeholder="Company Name">										</div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group"> <label for="subject">Product Name<span class="required">*</span></label> <i class="fa fa-flag highlight2" aria-hidden="true"></i> <input type="text" aria-required="true" size="30" value="" name="Product" id="ProductName" class="form-control" placeholder="Product Name">										</div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="contact-form-message form-group"> <label for="message">Message</label> <i class="fa fa-comment highlight2" aria-hidden="true"></i> <textarea aria-required="true" rows="3" cols="45" name="message" id="Message" class="form-control" placeholder="Message"></textarea> </div>
+                        </div>
+                        <div class="col-sm-12 bottommargin_0">
+                            <div class="contact-form-submit topmargin_10">
+                                <input type="button" id="" name="Contact" class="theme_button color2 wide_button margin_0" onclick="NewData()" value="Submit" />
+                            </div>
+                        </div>
+                    }
+                </form>
+
+            </div>
+            <div class="col-md-4 to_animate" data-animation="scaleAppear">
+                <ul class="list1 no-bullets no-top-border no-bottom-border">
+                    <li>
+                        <div class="media">
+                            <div class="media-left"> <i class="rt-icon2-shop highlight2 fontsize_18"></i> </div>
+                            <div class="media-body">
+                                <h5 class="media-heading grey">Postal Address:</h5> Near Deshbhandu School Station Road, Raipur, Chhattisgarh 492009
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media">
+                            <div class="media-left"> <i class="rt-icon2-phone5 highlight2 fontsize_18"></i> </div>
+                            <div class="media-body">
+                                <h5 class="media-heading grey">Phone:</h5> 0771-4020352, 9165184444
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="media">
+                            <div class="media-left"> <i class="rt-icon2-mail highlight2 fontsize_18"></i> </div>
+                            <div class="media-body greylinks">
+                                <h5 class="media-heading grey">Email:</h5> <a href="mailto:your@mail.com">jainmachinery.raipur@gmail.com</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="map" class="ls" data-address="Terracina, LT, Italia">
+    <!-- marker description and marker icon goes here -->
+    <div class="map_marker_description">
+
+        @* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1314.7647402231212!2d81.63383105872497!3d21.243097488566196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28ddbd81f5af09%3A0xd9f04e73e4114375!2sRDA+Building+and+Complex!5e0!3m2!1sen!2sin!4v1566029619328!5m2!1sen!2sin" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>*@
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.459947296444!2d81.62877946424928!3d21.253253685453934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dd9179dfa4a9%3A0xfea030ebec5f8a1b!2sJain%20Machinery%20-%20Air%20Compressor%20Dealer%20in%20Raipur!5e0!3m2!1sen!2sin!4v1575533214218!5m2!1sen!2sin" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+        @*<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237979.16119480727!2d81.49026114600375!3d21.25466213898136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dd921aef7c0b%3A0xbfb7a42e133042b6!2sJain%20Machinery!5e0!3m2!1sen!2sin!4v1570690107027!5m2!1sen!2sin" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>*@
+
+    </div>
+</section>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link href="~/AdminPanelDesign/sweetalert.css" rel="stylesheet" />
+<script src="~/AdminPanelDesign/sweetalert.js"></script>
+
+@Html.Hidden("SaveStatus", ViewBag.status as string)
+@Html.Hidden("RedirectToHome", Url.Action("Contact", "Home", new { area = "" }))
+@Html.Hidden("RedirectToLogin", Url.Action("Login", "Account", new { area = "" }))
+
+
+
+<script>
+
+
+    function NewData() {
+
+
+        if($('#Name').val()=="") {
+            sweetAlert("Oops...","Please Fill Name!","error");
+        }
+        else if($('#MobileNo').val()=="") {
+            sweetAlert("Oops...","Please Fill MobileNo!","error");
+        }
+        else if($('#Email').val()=="") {
+            sweetAlert("Oops...","Please Fill Email!","error");
+        }
+        else if($('#CompanyName').val()=="") {
+            sweetAlert("Oops...","Please Fill CompanyName!","error");
+        }
+        else if($('#ProductName').val()=="") {
+            sweetAlert("Oops...","Please Fill ProductName!","error");
+        }
+        else if($('#Message').val()=="") {
+            sweetAlert("Oops...","Please Fill Message!","error");
+        }
+        else {
+            $.ajax({
+                type: "post",
+                url: "/Home/SubmitContactData",
+
+                data: {
+
+                    Name: $('#Name').val(),
+                    MobileNo: $('#MobileNo').val(),
+                    Email: $('#Email').val(),
+                    CompanyName: $('#CompanyName').val(),
+                    ProductName: $('#ProductName').val(),
+                    Message: $('#Message').val(),
+
+
+
+                },
+                datatype: "json",
+
+
+
+                success: function(data) {
+
+                    $('.form-process').fadeOut();
+                    if(data!=null) {
+
+                        sweetAlert
+                               ({
+                                   title: "Succeded!",
+                                   text: "Your Data has been saved SUCCESSFULLY.",
+                                   type: "success"
+                               },
+                                   function() {
+                                       var url=$("#RedirectToHome").val();
+                                       location.href=url;
+                                   });
+
+                    }
+
+
+
+                }
+            });
+        }
+
+
+    }
+
+</script>
+
+<script>
+    // WRITE THE VALIDATION SCRIPT.
+    function isNumber(evt) {
+        var iKeyCode=(evt.which)?evt.which:evt.keyCode
+        if(iKeyCode!=46&&iKeyCode>31&&(iKeyCode<48||iKeyCode>57))
+            return false;
+
+        return true;
+    }
+
+
+
+
+     $(function () {
+            $("#Name").keypress(function (e) {
+                var keyCode = e.keyCode || e.which;
+
+                $("#lblError").html("");
+
+                //Regex for Valid Characters i.e. Alphabets and Numbers.
+                var regex = /^[A-Za-z\. ]+$/;
+
+                //Validate TextBox value against the Regex.
+                var isValid = regex.test(String.fromCharCode(keyCode));
+                if (!isValid) {
+
+                    alert("Only Alphabets are allowed for Name.");
+                   
+                }
+
+                return isValid;
+            });
+        });
+
+
+</script>

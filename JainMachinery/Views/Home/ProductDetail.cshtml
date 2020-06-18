@@ -1,0 +1,340 @@
+﻿@using JainMachinery.Models;
+@using JainMachinery.DAL
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    SubProductDetail detail = ViewData["ProductDetail"] as SubProductDetail;
+    List<SubProductDetail> releted = ViewData["ReletedProduct"] as List<SubProductDetail>;
+}
+
+<header class="page_header header_white toggler_xs_right section_padding_25">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 display_table">
+                <div class="header_left_logo display_table_cell">
+                    <a href="@Url.Action("Index","Home")" class="logo top_logo">
+
+                        <h3 style="font-size:xx-large"> <img src="~/Design/jainmachinelogo.png" style="height:60px;width:100px;" /> Jain Machiner<span class="highlight">Y</span> </h3>
+
+                    </a>
+                </div>
+                <div class="header_mainmenu display_table_cell text-center">
+                    <!-- main nav start -->
+                    <nav class="mainmenu_wrapper">
+                        <ul class="mainmenu nav sf-menu">
+                            <li>
+                                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i>   Home</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("About", "Home")"> <i class="fa fa-user"></i>  About</a>
+                            </li>
+
+
+                            <li class="active">
+                                <a href="@Url.Action("Products","Home")"> <i class="fa fa-cogs"></i> Products</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("ProductDemo","Home")"> <i class="fa fa-play"></i> Product Demo</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ProductBrochures", "Home")"> <i class="fa fa-file-pdf-o"></i>Brochures</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("Contact","Home")"> <i class="fa fa-map-marker"></i>  Contacts</a>
+                            </li>
+                            <!-- eof contacts -->
+                        </ul>
+                    </nav>
+                    <!-- eof main nav -->
+                    <!-- header toggler --><span class="toggle_menu"><span></span></span>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section class="page_breadcrumbs ds color parallax section_padding_top_75 section_padding_bottom_75">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="text-uppercase">@detail.SubProductName</h2>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ls section_padding_top_130 section_padding_bottom_130 columns_padding_25">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                @if (detail != null)
+                {
+                    <div itemscope="" itemtype="" class="product type-product row columns_padding_25">
+                        <div class="col-sm-6">
+                            <div class="item-media images muted_background text-center rounded overflow_hidden">
+                                <a href="@Global.WebsiteUrl()~/SubProducts/@detail.SubProductImage" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+                                    <img src="@Global.WebsiteUrl()~/SubProducts/@detail.SubProductImage" style="height:400px;width:400px;" class="attachment-shop_single wp-post-image" alt="" title="@detail.SubProductName">
+                                </a>
+
+                            </div>
+                            <!--eof .images -->
+                            <!-- eof .images -->
+                        </div>
+                        <div class="summary entry-summary col-sm-6">
+                            <div class="content-justify vertical-center">
+
+                            </div>
+                            <h1 itemprop="name" class="product_title text-uppercase topmargin_0">@detail.SubProductName</h1>
+                            <div>
+                                <p>
+                                    @detail.Description
+                                </p>
+                            </div>
+                            <div class="row product_meta small-text big greylinks">
+                                <div class="col-sm-6">
+                                    <span class="posted_in">
+                                        <span>Categories:</span> <span class="categories-links">
+                                            <a href="shop-right.html">Drills</a>, <a href="shop-right.html">Drills Master</a>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="posted_in">
+                                        <span>Tegs:</span> <span class="categories-links">
+                                            <a href="shop-right.html">Electric Tools</a>,
+                                            <a href="shop-right.html">Drills</a>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <hr class="divider_30">
+                            @*<form class="cart topmargin_50" method="post" enctype="multipart/form-data">
+
+
+
+                                    <a href="#" rel="nofollow" class="theme_button color1 wide_button add_to_cart_button">
+                                        Add to cart
+                                    </a>
+                                </form>*@
+                        </div>
+                        <!-- .summary.col- -->
+                    </div>
+                }
+                else
+                {
+                    <div itemscope="" itemtype="http://schema.org/Product" class="product type-product row columns_padding_25">
+                        <div class="col-sm-6">
+                            <div class="item-media images muted_background text-center rounded overflow_hidden">
+                                <a href="~/Design/images/shop/04.png" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+                                    <img src="~/Design/images/shop/04.png" class="attachment-shop_single wp-post-image" alt="" title="">
+                                </a>
+
+                            </div>
+                            <!--eof .images -->
+                            <!-- eof .images -->
+                        </div>
+                        <div class="summary entry-summary col-sm-6">
+                            <div class="content-justify vertical-center">
+
+                            </div>
+                            <h1 itemprop="name" class="product_title text-uppercase topmargin_0">Drill Master UY 2850E</h1>
+                            <div>
+                                <p>
+                                    Capicola jerky tongue, burgdoggen drumstick chuck ground round picanha beef bacon ribeye leberkas. Turkey ham andouille strip steak burgdoggen beef ribs. Capicola tenderloin salami chuck cupim turducken, doner pig ribeye meatball hamburger prosciutto.
+                                </p>
+                            </div>
+                            <div class="row product_meta small-text big greylinks">
+                                <div class="col-sm-6">
+                                    <span class="posted_in">
+                                        <span>Categories:</span> <span class="categories-links">
+                                            <a href="shop-right.html">Drills</a>, <a href="shop-right.html">Drills Master</a>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="posted_in">
+                                        <span>Tegs:</span> <span class="categories-links">
+                                            <a href="shop-right.html">Electric Tools</a>,
+                                            <a href="shop-right.html">Drills</a>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <hr class="divider_30">
+                            @*<form class="cart topmargin_50" method="post" enctype="multipart/form-data">
+
+
+
+                                    <a href="#" rel="nofollow" class="theme_button color1 wide_button add_to_cart_button">
+                                        Add to cart
+                                    </a>
+                                </form>*@
+                        </div>
+                        <!-- .summary.col- -->
+                    </div>
+                }
+
+
+
+
+                <!-- .product.row -->
+                <div class="row topmargin_50">
+                    <div class="col-sm-12">
+                        <h3 class="text-center text-uppercase">Related products</h3>
+                        <div class="owl-carousel topmargin_30" data-dots="false" data-loop="true" data-autoplay="true" data-responsive-lg="3">
+
+                            @if (releted != null)
+                            {
+                                foreach (var r in releted.Where(s => s.SubProductMainID == detail.SubProductMainID))
+                                {
+                                    <div class="vertical-item with_border content-padding product text-center">
+                                        <div class="item-media muted_background rounded overflow_hidden">
+                                            <a href="#">
+                                                <img src="@Global.WebsiteUrl()~/SubProducts/@r.SubProductImage" alt="" style="height:230px;width:250px;">
+                                            </a>
+
+                                        </div>
+                                        <div class="item-content text-center" style="height:200px;">
+
+                                            <h4 class="entry-title topmargin_10 hover-color2"> <a href="shop-product-right.html">@r.SubProductName</a> </h4>
+                                            <p>@r.Description</p>
+
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+                            else
+                            {
+                                <div class="vertical-item with_border content-padding product text-center">
+                                    <div class="item-media muted_background rounded overflow_hidden">
+                                        <a href="#">
+                                            <img src="~/Design/images/shop/01.png" alt="">
+                                        </a>
+                                        <div class="entry-meta-corner main_bg_color2"> <span class="value">55</span> <span class="small-text big-spacing">eur</span> </div>
+                                    </div>
+                                    <div class="item-content text-center">
+                                        <div class="content-justify">
+                                            <div class="small-text big highlight2links"> <a href="#">Drills</a> </div>
+                                            <div>
+                                                <div class="star-rating right-rating" title="Rated 4.00 out of 5">
+                                                    <span style="width:80%">
+                                                        <strong class="rating">4.00</strong> out of 5
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="entry-title topmargin_10 hover-color2"> <a href="shop-product-right.html">Doner Strip Steak 2369</a> </h4>
+                                        <p>Frankfurter cupim rump burgdoggen. Pork ham hock beef ribs pancetta prosciutto sirloin filet mignon.</p>
+                                        <p class="topmargin_25 small-text big highlight2links">
+                                            <a href="#" rel="nofollow">
+                                                Add To Cart
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item with_border content-padding text-center">
+                                    <div class="item-media muted_background rounded overflow_hidden">
+                                        <a href="#">
+                                            <img src="~/Design/images/shop/02.png" alt="">
+                                        </a>
+                                        <div class="entry-meta-corner main_bg_color"> <span class="value">99</span> <span class="small-text big-spacing">eur</span> </div>
+                                    </div>
+                                    <div class="item-content text-center">
+                                        <div class="content-justify">
+                                            <div class="small-text big highlightlinks"> <a href="#">sanders</a> </div>
+                                            <div>
+                                                <div class="star-rating right-rating" title="Rated 3.00 out of 5">
+                                                    <span style="width:60%">
+                                                        <strong class="rating">3.00</strong> out of 5
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="entry-title topmargin_10"> <a href="shop-product-right.html">Chuck Corned FG-00</a> </h4>
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                                        <p class="topmargin_25 small-text big highlightlinks">
+                                            <a href="#" rel="nofollow">
+                                                Add To Cart
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item with_border content-padding text-center">
+                                    <div class="item-media muted_background rounded overflow_hidden">
+                                        <a href="#">
+                                            <img src="~/Design/images/shop/03.png" alt="">
+                                        </a>
+                                        <div class="entry-meta-corner main_bg_color3"> <span class="value">121</span> <span class="small-text big-spacing">eur</span> </div>
+                                    </div>
+                                    <div class="item-content text-center">
+                                        <div class="content-justify">
+                                            <div class="small-text big highlight3links"> <a href="#">rivet guns</a> </div>
+                                            <div>
+                                                <div class="star-rating right-rating" title="Rated 4.00 out of 5">
+                                                    <span style="width:80%">
+                                                        <strong class="rating">4.00</strong> out of 5
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="entry-title topmargin_10 hover-color3"> <a href="shop-product-right.html">Sirloin GT890 Fielbasa</a> </h4>
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                                        <p class="topmargin_25 small-text big highlight3links">
+                                            <a href="#" rel="nofollow">
+                                                Add To Cart
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item with_border content-padding product text-center">
+                                    <div class="item-media muted_background rounded overflow_hidden">
+                                        <a href="#">
+                                            <img src="~/Design/images/shop/04.png" alt="">
+                                        </a>
+                                        <div class="entry-meta-corner main_bg_color6"> <span class="value">121</span> <span class="small-text big-spacing">eur</span> </div>
+                                    </div>
+                                    <div class="item-content text-center">
+                                        <div class="content-justify">
+                                            <div class="small-text big highlight6links"> <a href="#">Hose Reels</a> </div>
+                                            <div>
+                                                <div class="star-rating right-rating" title="Rated 2.00 out of 5">
+                                                    <span style="width:40%">
+                                                        <strong class="rating">2.00</strong> out of 5
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="entry-title topmargin_10 hover-color6"> <a href="shop-product-right.html">Turducken 3900</a> </h4>
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                                        <p class="topmargin_25 small-text big highlight6links">
+                                            <a href="#" rel="nofollow">
+                                                Add To Cart
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--eof .col-sm-8 (main content)-->
+        </div>
+    </div>
+</section>

@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35193404-04D9-446D-B155-BEBA0041D579}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JainMachinery</RootNamespace>
+    <AssemblyName>JainMachinery</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\AdminManager.cs" />
+    <Compile Include="DAL\Global.cs" />
+    <Compile Include="DAL\UserContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910141121033_forUsertables.cs" />
+    <Compile Include="Migrations\201910141121033_forUsertables.Designer.cs">
+      <DependentUpon>201910141121033_forUsertables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910141125049_forunknown.cs" />
+    <Compile Include="Migrations\201910141125049_forunknown.Designer.cs">
+      <DependentUpon>201910141125049_forunknown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912311127279_forNewProductmasterds.cs" />
+    <Compile Include="Migrations\201912311127279_forNewProductmasterds.Designer.cs">
+      <DependentUpon>201912311127279_forNewProductmasterds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001060942417_forProductmasterupdate.cs" />
+    <Compile Include="Migrations\202001060942417_forProductmasterupdate.Designer.cs">
+      <DependentUpon>202001060942417_forProductmasterupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001220722472_forProductVideo.cs" />
+    <Compile Include="Migrations\202001220722472_forProductVideo.Designer.cs">
+      <DependentUpon>202001220722472_forProductVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001220807523_forProductBrochure.cs" />
+    <Compile Include="Migrations\202001220807523_forProductBrochure.Designer.cs">
+      <DependentUpon>202001220807523_forProductBrochure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221006530_forContactdataupdate.cs" />
+    <Compile Include="Migrations\202001221006530_forContactdataupdate.Designer.cs">
+      <DependentUpon>202001221006530_forContactdataupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\AdminView.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminPanelDesign\dataTables.bootstrap4.min.js" />
+    <Content Include="AdminPanelDesign\jquery.dataTables.min.js" />
+    <Content Include="AdminPanelDesign\sweetalert.css" />
+    <Content Include="AdminPanelDesign\sweetalert.js" />
+    <Content Include="Areas\Admin\admin.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Design\Agriculter Machine\agriculter.jpg" />
+    <Content Include="Design\contactbanner.jpg" />
+    <Content Include="Design\css\animations.css" />
+    <Content Include="Design\css\bootstrap.min.css" />
+    <Content Include="Design\css\fonts.css" />
+    <Content Include="Design\css\main.css" />
+    <Content Include="Design\css\shop.css" />
+    <Content Include="Design\fonts\fontawesome-webfont5b62.html" />
+    <Content Include="Design\fonts\fontawesome-webfont5b62.svg" />
+    <Content Include="Design\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Design\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Design\fonts\rt-icons-23dab.svg" />
+    <Content Include="Design\fonts\socicon.svg" />
+    <Content Include="Design\images\banner.jpg" />
+    <Content Include="Design\images\Banner\banner1.png" />
+    <Content Include="Design\images\Banner\banner2.jpg" />
+    <Content Include="Design\images\Banner\banner3.jpg" />
+    <Content Include="Design\images\Banner\banner4.jpg" />
+    <Content Include="Design\images\Banner\banner5.jpg" />
+    <Content Include="Design\images\Banner\machine1.jpg" />
+    <Content Include="Design\images\Banner\machine2.jpg" />
+    <Content Include="Design\images\Banner\machine3.jpg" />
+    <Content Include="Design\images\Banner\machine4.jpg" />
+    <Content Include="Design\images\categories\01.jpg" />
+    <Content Include="Design\images\categories\02.jpg" />
+    <Content Include="Design\images\categories\03.jpg" />
+    <Content Include="Design\images\categories\04.jpg" />
+    <Content Include="Design\images\categories\05.jpg" />
+    <Content Include="Design\images\categories\06.jpg" />
+    <Content Include="Design\images\categories\07.jpg" />
+    <Content Include="Design\images\categories\08.jpg" />
+    <Content Include="Design\images\events\01.jpg" />
+    <Content Include="Design\images\events\02.jpg" />
+    <Content Include="Design\images\events\03.jpg" />
+    <Content Include="Design\images\events\04.jpg" />
+    <Content Include="Design\images\events\05.jpg" />
+    <Content Include="Design\images\events\06.jpg" />
+    <Content Include="Design\images\events\07.jpg" />
+    <Content Include="Design\images\events\08.jpg" />
+    <Content Include="Design\images\events\09.jpg" />
+    <Content Include="Design\images\faces\01.jpg" />
+    <Content Include="Design\images\faces\02.jpg" />
+    <Content Include="Design\images\faces\03.jpg" />
+    <Content Include="Design\images\faces\04.jpg" />
+    <Content Include="Design\images\fileicon.png" />
+    <Content Include="Design\images\gallery\01.jpg" />
+    <Content Include="Design\images\gallery\02.jpg" />
+    <Content Include="Design\images\gallery\03.jpg" />
+    <Content Include="Design\images\gallery\04.jpg" />
+    <Content Include="Design\images\gallery\05.jpg" />
+    <Content Include="Design\images\gallery\06.jpg" />
+    <Content Include="Design\images\gallery\07.jpg" />
+    <Content Include="Design\images\gallery\08.jpg" />
+    <Content Include="Design\images\gallery\09.jpg" />
+    <Content Include="Design\images\gallery\10.jpg" />
+    <Content Include="Design\images\gallery\11.jpg" />
+    <Content Include="Design\images\gallery\12.jpg" />
+    <Content Include="Design\images\gallery\tile\01.jpg" />
+    <Content Include="Design\images\gallery\tile\02.jpg" />
+    <Content Include="Design\images\gallery\tile\03.jpg" />
+    <Content Include="Design\images\gallery\tile\05.jpg" />
+    <Content Include="Design\images\gallery\tile\06.jpg" />
+    <Content Include="Design\images\gallery\tile\07.jpg" />
+    <Content Include="Design\images\gallery\tile\08.jpg" />
+    <Content Include="Design\images\gallery\tile\09.jpg" />
+    <Content Include="Design\images\logo-light.png" />
+    <Content Include="Design\images\logo.png" />
+    <Content Include="Design\images\map_marker_icon.png" />
+    <Content Include="Design\images\quote_bg.jpg" />
+    <Content Include="Design\images\recent_post1.jpg" />
+    <Content Include="Design\images\recent_post2.jpg" />
+    <Content Include="Design\images\recent_post3.jpg" />
+    <Content Include="Design\images\shop\01.png" />
+    <Content Include="Design\images\shop\02.png" />
+    <Content Include="Design\images\shop\03.png" />
+    <Content Include="Design\images\shop\04.png" />
+    <Content Include="Design\images\side-image.jpg" />
+    <Content Include="Design\images\slide01.jpg" />
+    <Content Include="Design\images\slide02.jpg" />
+    <Content Include="Design\images\slide03.jpg" />
+    <Content Include="Design\images\status_bg.jpg" />
+    <Content Include="Design\images\team\01.jpg" />
+    <Content Include="Design\images\team\02.jpg" />
+    <Content Include="Design\images\team\03.jpg" />
+    <Content Include="Design\img\aside_bg.jpg" />
+    <Content Include="Design\img\background_section.png" />
+    <Content Include="Design\img\loading.png" />
+    <Content Include="Design\img\owl.video.play.png" />
+    <Content Include="Design\img\parallax\404.jpg" />
+    <Content Include="Design\img\parallax\about.jpg" />
+    <Content Include="Design\img\parallax\bottom.jpg" />
+    <Content Include="Design\img\parallax\features.jpg" />
+    <Content Include="Design\img\parallax\icon.png" />
+    <Content Include="Design\img\parallax\map.jpg" />
+    <Content Include="Design\img\parallax\testimonials.jpg" />
+    <Content Include="Design\img\parallax\top.jpg" />
+    <Content Include="Design\img\pattern1.png" />
+    <Content Include="Design\img\pattern10.png" />
+    <Content Include="Design\img\pattern11.png" />
+    <Content Include="Design\img\pattern2.png" />
+    <Content Include="Design\img\pattern3.png" />
+    <Content Include="Design\img\pattern4.png" />
+    <Content Include="Design\img\pattern5.png" />
+    <Content Include="Design\img\pattern6.png" />
+    <Content Include="Design\img\pattern7.png" />
+    <Content Include="Design\img\pattern8.png" />
+    <Content Include="Design\img\pattern9.png" />
+    <Content Include="Design\img\preloader.gif" />
+    <Content Include="Design\img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Design\jainmachinelogo.png" />
+    <Content Include="Design\js\compressed.js" />
+    <Content Include="Design\js\main.js" />
+    <Content Include="Design\js\switcher.js" />
+    <Content Include="Design\js\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="Design\PumpandMotors\cmpupms.jpg" />
+    <Content Include="Design\PumpandMotors\cpumps.jpg" />
+    <Content Include="Design\PumpandMotors\opump.jpg" />
+    <Content Include="Design\PumpandMotors\opump2.jpg" />
+    <Content Include="Design\PumpandMotors\pump1.jpg" />
+    <Content Include="Design\PumpandMotors\pump2.jpg" />
+    <Content Include="Design\PumpandMotors\pump4.jpg" />
+    <Content Include="Design\PumpandMotors\PumsandMotors.jpg" />
+    <Content Include="Design\PumpandMotors\pupm3.jpg" />
+    <Content Include="Design\PumpandMotors\spump.jpg" />
+    <Content Include="Design\PumpandMotors\spump2.jpg" />
+    <Content Include="Design\PumpandMotors\v4pump.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypump1.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypump2.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypump3.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypump4.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypump5.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypump6.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypump7.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypump8.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypumpcomp.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypumplist.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypumplist1.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypumplist2.jpg" />
+    <Content Include="Design\SprayPumpsandGuns\spraypumps.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="LoginDesign\css\font-awesome.css" />
+    <Content Include="LoginDesign\css\style.css" />
+    <Content Include="LoginDesign\images\banner1.jpg" />
+    <Content Include="LoginDesign\images\icon.png" />
+    <Content Include="ProductMaster\agriculter.jpg" />
+    <Content Include="ProductMaster\foodmachine.jpg" />
+    <Content Include="ProductMaster\motorandblower.jpg" />
+    <Content Include="ProductMaster\PHOTO-2019-11-07-18-08-49.jpg" />
+    <Content Include="ProductMaster\PHOTO-2019-11-07-18-09-09.jpg" />
+    <Content Include="ProductMaster\PumsandMotors.jpg" />
+    <Content Include="ProductMaster\Ricemillchaffcutter.jpg" />
+    <Content Include="ProductMaster\spraypumps.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Design\fonts\fontawesome-webfont5b62.eot" />
+    <Content Include="Design\fonts\fontawesome-webfont5b62.ttf" />
+    <Content Include="Design\fonts\fontawesome-webfont5b62.woff" />
+    <Content Include="Design\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Design\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Design\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Design\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Design\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Design\fonts\rt-icons-23dab.eot" />
+    <Content Include="Design\fonts\rt-icons-23dab.ttf" />
+    <Content Include="Design\fonts\rt-icons-23dab.woff" />
+    <Content Include="Design\fonts\rt-icons-2d41d.eot" />
+    <Content Include="Design\fonts\socicon.eot" />
+    <Content Include="Design\fonts\socicon.ttf" />
+    <Content Include="Design\fonts\socicon.woff" />
+    <Content Include="Design\fonts\socicond41d.eot" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\ProductMaster.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\SubProducts.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AllSubProducts.cshtml" />
+    <Content Include="LoginDesign\fonts\fontawesome-webfont.eot" />
+    <Content Include="LoginDesign\fonts\fontawesome-webfont.ttf" />
+    <Content Include="LoginDesign\fonts\fontawesome-webfont.woff" />
+    <Content Include="LoginDesign\fonts\fontawesome-webfont.woff2" />
+    <Content Include="LoginDesign\fonts\FontAwesome.otf" />
+    <Content Include="LoginDesign\images\Thumbs.db" />
+    <Content Include="Areas\Admin\Views\Admin\ProductVideos.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AllProductVideos.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AddProductBrochure.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AllBrochures.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AllContactForm.cshtml" />
+    <None Include="Properties\PublishProfiles\jain Machine.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="SubProducts\2in1Pulvisior.jpg" />
+    <Content Include="SubProducts\bain mari.jpg" />
+    <Content Include="SubProducts\BananaWaffer.jpg" />
+    <Content Include="SubProducts\BesanMixMach.jpg" />
+    <Content Include="SubProducts\BhajiCutting.jpg" />
+    <Content Include="SubProducts\bread slicer.jpg" />
+    <Content Include="SubProducts\CarrotFruitmach.jpg" />
+    <Content Include="SubProducts\ChapatiBhati.jpg" />
+    <Content Include="SubProducts\CharcolBarbeeQue.jpg" />
+    <Content Include="SubProducts\Chatni Machine.jpg" />
+    <Content Include="SubProducts\chimery.jpg" />
+    <Content Include="SubProducts\coconut fountain.jpg" />
+    <Content Include="SubProducts\CoconutScrapper.jpg" />
+    <Content Include="SubProducts\Coffee machine.jpg" />
+    <Content Include="SubProducts\commercial blender.jpg" />
+    <Content Include="SubProducts\conver toaster.jpg" />
+    <Content Include="SubProducts\deck oven.jpg" />
+    <Content Include="SubProducts\deep frizzer.jpg" />
+    <Content Include="SubProducts\DeepFrenchFryer.jpg" />
+    <Content Include="SubProducts\dining table.jpg" />
+    <Content Include="SubProducts\Display counter.jpg" />
+    <Content Include="SubProducts\Dleselbhatti.jpg" />
+    <Content Include="SubProducts\door vertical freez.jpg" />
+    <Content Include="SubProducts\DosaBhati.jpg" />
+    <Content Include="SubProducts\DoughballMaking.jpg" />
+    <Content Include="SubProducts\Dryermach.jpg" />
+    <Content Include="SubProducts\DryerTitling.jpg" />
+    <Content Include="SubProducts\DryfruitChipsmach.jpg" />
+    <Content Include="SubProducts\Dryfruitpowder.jpg" />
+    <Content Include="SubProducts\DryfruitTukdacut.jpg" />
+    <Content Include="SubProducts\ElectricDosaBhati.jpg" />
+    <Content Include="SubProducts\ElectricKadaistand.jpg" />
+    <Content Include="SubProducts\ElectricKadaiTableTop.jpg" />
+    <Content Include="SubProducts\Fafdamach.jpg" />
+    <Content Include="SubProducts\FarsanMach.jpg" />
+    <Content Include="SubProducts\finger chips warm.jpg" />
+    <Content Include="SubProducts\FlourDough.jpg" />
+    <Content Include="SubProducts\FullyAutomaticflourmill.jpg" />
+    <Content Include="SubProducts\g. n. pan.jpg" />
+    <Content Include="SubProducts\GarbageCrusherMach.jpg" />
+    <Content Include="SubProducts\Garlicpeelarmachine.jpg" />
+    <Content Include="SubProducts\GasRangeCookingRange.jpg" />
+    <Content Include="SubProducts\GravyMachine.jpg" />
+    <Content Include="SubProducts\handChilyCutter.jpg" />
+    <Content Include="SubProducts\handdryfruit.jpg" />
+    <Content Include="SubProducts\handOperatedChipsmach.jpg" />
+    <Content Include="SubProducts\HandOperatedSevMachine.jpg" />
+    <Content Include="SubProducts\ice qube machine.jpg" />
+    <Content Include="SubProducts\IceCrusher.jpg" />
+    <Content Include="SubProducts\IceTukdaMachinemanual.jpg" />
+    <Content Include="SubProducts\indecution plate.jpg" />
+    <Content Include="SubProducts\InductionfarshanKadai.jpg" />
+    <Content Include="SubProducts\InductionfarshanKadai2.jpg" />
+    <Content Include="SubProducts\InductionMilkKhoya.jpg" />
+    <Content Include="SubProducts\InductionSteamer.jpg" />
+    <Content Include="SubProducts\juse dispencer.jpg" />
+    <Content Include="SubProducts\KadukasBhukaMachine.jpg" />
+    <Content Include="SubProducts\KajuMustimachine.jpg" />
+    <Content Include="SubProducts\KeethenSteelWorkingtable.jpg" />
+    <Content Include="SubProducts\KitenSteelPicup.jpg" />
+    <Content Include="SubProducts\LadooCrushermach.jpg" />
+    <Content Include="SubProducts\Livesteamdhokla.jpg" />
+    <Content Include="SubProducts\machine1.jpg" />
+    <Content Include="SubProducts\machine2.jpg" />
+    <Content Include="SubProducts\machine3.jpg" />
+    <Content Include="SubProducts\machine4.jpg" />
+    <Content Include="SubProducts\MachineDemo.mp4" />
+    <Content Include="SubProducts\mangopulpmach.jpg" />
+    <Content Include="SubProducts\masala trolly.jpg" />
+    <Content Include="SubProducts\masalagrindingmachine.jpg" />
+    <Content Include="SubProducts\MasalaPeti.jpg" />
+    <Content Include="SubProducts\milk mewa machine.jpg" />
+    <Content Include="SubProducts\MixmachRoundModel.jpg" />
+    <Content Include="SubProducts\MixMachTitlingmac.jpg" />
+    <Content Include="SubProducts\MixSquareModel.jpg" />
+    <Content Include="SubProducts\MixVBeltmodel.jpg" />
+    <Content Include="SubProducts\ms tandoor.jpg" />
+    <Content Include="SubProducts\MSPulversir.jpg" />
+    <Content Include="SubProducts\NamkeenMasalamix.jpg" />
+    <Content Include="SubProducts\NaylonSaveMach.jpg" />
+    <Content Include="SubProducts\NylonKhamanMach.jpg" />
+    <Content Include="SubProducts\OilmakerMach.jpg" />
+    <Content Include="SubProducts\OnionCuttingMachine.jpg" />
+    <Content Include="SubProducts\OnionSlicerMachine.jpg" />
+    <Content Include="SubProducts\OrangeJuiseMach.jpg" />
+    <Content Include="SubProducts\pizza milker.jpg" />
+    <Content Include="SubProducts\PizzaOvenElectric.jpg" />
+    <Content Include="SubProducts\PizzaOvenGas.jpg" />
+    <Content Include="SubProducts\planatory mixer machine.jpg" />
+    <Content Include="SubProducts\plastory display counter.jpg" />
+    <Content Include="SubProducts\PopCornMachine.jpg" />
+    <Content Include="SubProducts\popur toaster.jpg" />
+    <Content Include="SubProducts\potato torato cuter.jpg" />
+    <Content Include="SubProducts\PotatoPiller.jpg" />
+    <Content Include="SubProducts\PotatoWaffer.jpg" />
+    <Content Include="SubProducts\pump1.jpg" />
+    <Content Include="SubProducts\pump10.jpg" />
+    <Content Include="SubProducts\pump11.jpg" />
+    <Content Include="SubProducts\pump12.jpg" />
+    <Content Include="SubProducts\pump13.jpg" />
+    <Content Include="SubProducts\pump14.jpg" />
+    <Content Include="SubProducts\pump15.jpg" />
+    <Content Include="SubProducts\pump16.jpg" />
+    <Content Include="SubProducts\pump17.jpg" />
+    <Content Include="SubProducts\pump18.jpg" />
+    <Content Include="SubProducts\pump19.jpg" />
+    <Content Include="SubProducts\pump2.jpg" />
+    <Content Include="SubProducts\pump20.jpg" />
+    <Content Include="SubProducts\pump21.jpg" />
+    <Content Include="SubProducts\pump22.jpg" />
+    <Content Include="SubProducts\pump3.jpg" />
+    <Content Include="SubProducts\pump4.jpg" />
+    <Content Include="SubProducts\pump5.jpg" />
+    <Content Include="SubProducts\pump6.jpg" />
+    <Content Include="SubProducts\pump7.jpg" />
+    <Content Include="SubProducts\pump8.jpg" />
+    <Content Include="SubProducts\pump9.jpg" />
+    <Content Include="SubProducts\Rack.jpg" />
+    <Content Include="SubProducts\RotiMachine.jpg" />
+    <Content Include="SubProducts\salamander.jpg" />
+    <Content Include="SubProducts\SandwishGriller.jpg" />
+    <Content Include="SubProducts\sereal despencer.jpg" />
+    <Content Include="SubProducts\service trolly.jpg" />
+    <Content Include="SubProducts\single snik with table.jpg" />
+    <Content Include="SubProducts\slush machine.jpg" />
+    <Content Include="SubProducts\soiled dish table.jpg" />
+    <Content Include="SubProducts\spiral mixer.jpg" />
+    <Content Include="SubProducts\ss tandoor.jpg" />
+    <Content Include="SubProducts\SSSinkUnit.jpg" />
+    <Content Include="SubProducts\stockpot burner.jpg" />
+    <Content Include="SubProducts\SugarcaneCompak.jpg" />
+    <Content Include="SubProducts\SugarcaneJuiseMach.jpg" />
+    <Content Include="SubProducts\under counter frezz.jpg" />
+    <Content Include="SubProducts\valona.jpg" />
+    <Content Include="SubProducts\Vegcutdulex.jpg" />
+    <Content Include="SubProducts\VegCutJumbo.jpg" />
+    <Content Include="SubProducts\Vegetablecuttingmach.jpg" />
+    <Content Include="SubProducts\waffle baker.jpg" />
+    <Content Include="SubProducts\warming swace.jpg" />
+    <Content Include="SubProducts\water cooler.jpg" />
+    <Content Include="SubProducts\WetDalMach.jpg" />
+    <Content Include="SubProducts\WetGrinderRegula.jpg" />
+    <Content Include="SubProducts\WetGrinderTilting.jpg" />
+    <Content Include="Videos\MachineDemo.mp4" />
+    <Content Include="Videos\SampleVideo_1280x720_1mb.mp4" />
+    <Content Include="Videos\videoplayback %281%29.mp4" />
+    <Content Include="Videos\videoplayback.mp4" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\ProductDetail.cshtml" />
+    <Content Include="Views\Home\FoodProcessingMachine.cshtml" />
+    <Content Include="Views\Home\AgriculerMachine.cshtml" />
+    <Content Include="Views\Home\SprayPumsandGuns.cshtml" />
+    <Content Include="Views\Home\PumpsandMotors.cshtml" />
+    <Content Include="Views\Home\AllProducts.cshtml" />
+    <Content Include="Views\Home\ProductDemo.cshtml" />
+    <Content Include="Views\Home\ProductBrochures.cshtml" />
+    <Content Include="Videos\Air Compressor Catalogue.pdf" />
+    <Content Include="Videos\Leenova Cataloge.pdf" />
+    <Content Include="Videos\Screw E-Cat.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Design\Food Machines\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910141121033_forUsertables.resx">
+      <DependentUpon>201910141121033_forUsertables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910141125049_forunknown.resx">
+      <DependentUpon>201910141125049_forunknown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912311127279_forNewProductmasterds.resx">
+      <DependentUpon>201912311127279_forNewProductmasterds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001060942417_forProductmasterupdate.resx">
+      <DependentUpon>202001060942417_forProductmasterupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001220722472_forProductVideo.resx">
+      <DependentUpon>202001220722472_forProductVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001220807523_forProductBrochure.resx">
+      <DependentUpon>202001220807523_forProductBrochure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221006530_forContactdataupdate.resx">
+      <DependentUpon>202001221006530_forContactdataupdate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1882</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1882/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

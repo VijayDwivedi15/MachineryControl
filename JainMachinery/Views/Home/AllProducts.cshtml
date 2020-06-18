@@ -1,0 +1,139 @@
+﻿@using JainMachinery.Models;
+@using JainMachinery.DAL
+@{
+    ViewBag.Title = "AllProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<AllSubProdust> allproduct = ViewData["AllProduct"] as List<AllSubProdust>;
+}
+
+
+<header class="page_header header_white toggler_xs_right section_padding_25">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 display_table">
+                <div class="header_left_logo display_table_cell">
+                    <a href="@Url.Action("Index","Home")" class="logo top_logo">
+
+                        <h3 style="font-size:xx-large"> <img src="~/Design/jainmachinelogo.png" style="height:60px;width:100px;" /> Jain Machiner<span class="highlight">Y</span> </h3>
+
+                    </a>
+                </div>
+                <div class="header_mainmenu display_table_cell text-center">
+                    <!-- main nav start -->
+                    <nav class="mainmenu_wrapper">
+                        <ul class="mainmenu nav sf-menu">
+                            <li>
+                                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i>   Home</a>
+                            </li>
+                            <li >
+                                <a href="@Url.Action("About", "Home")"> <i class="fa fa-user"></i>  About</a>
+                            </li>
+
+
+                            <li class="active">
+                                <a href="@Url.Action("Products","Home")"> <i class="fa fa-cogs"></i> Products</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ProductDemo","Home")"> <i class="fa fa-play"></i> Product Demo</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ProductBrochures", "Home")"> <i class="fa fa-file-pdf-o"></i>Brochures</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("Contact","Home")"> <i class="fa fa-map-marker"></i>  Contacts</a>
+                            </li>
+                            <!-- eof contacts -->
+                        </ul>
+                    </nav>
+                    <!-- eof main nav -->
+                    <!-- header toggler --><span class="toggle_menu"><span></span></span>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="page_breadcrumbs ds color parallax section_padding_top_75 section_padding_bottom_75">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                @if (allproduct != null)
+                {
+                    var product = allproduct.Where(s => s.ProductID == @ViewBag.ProductID).FirstOrDefault();
+
+                    if (product != null)
+                    {
+                        <h2 class="text-uppercase">@product.ProductName</h2>
+
+                    }
+                    else
+                    {
+                        <h3 style="color:#0f7236">Product Detail</h3>
+
+                    }
+
+                }
+                else
+                {
+                    <h3>Product Details</h3>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ls section_padding_top_150 section_padding_bottom_150 columns_margin_bottom_20" style="margin-top:-100px;">
+    <div class="container">
+        <div class="row">
+
+            @if (allproduct != null)
+            {
+                foreach (var p in allproduct)
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="vertical-item with_border product">
+                            <div class="item-media margin_0">
+                                <img src="@Global.WebsiteUrl()~/SubProducts/@p.SubProductImage" alt="" style="height:260px;width:260px;">
+                                <div class="media-links"></div>
+
+                            </div> <a href="@Url.Action("ProductDetail", "Home", new { SubProductDetailID = @p.SubProductDetailID })" class="bg_link highlight4link" style="height:84px;">@p.SubProductName</a>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-md-3 col-sm-6">
+                    <div class="vertical-item with_border product">
+                        <div class="item-media margin_0">
+                            <img src="~/Design/Food%20Machines/GravyMachine.jpg" alt="" style="height:260px;width:260px;">
+                            <div class="media-links"></div>
+
+                        </div> <a href="@Url.Action("ProductDetail","Home")" class="bg_link highlight4link" style="height:84px;">Grevy Machine</a>
+                    </div>
+                </div>
+            }
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+

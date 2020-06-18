@@ -1,0 +1,135 @@
+﻿@model JainMachinery.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "";
+}
+
+<head>
+    <title>Jain Machinery, Raipur</title>
+    <link href="~/LoginDesign/css/font-awesome.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Design/jainmachinelogo.png">
+    <link href="~/LoginDesign/css/style.css" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+    <!-- body -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+</head>
+
+
+<body>
+    <h1> Jain Machinery </h1>
+    <div class="w3ls-login box box--big" style="margin-top:-35px;">
+        <!-- form starts here -->
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true)
+
+            <form action="#" method="post">
+
+                <div class="agile-field-txt">
+                    <label>
+                        <i class="fa fa-user" aria-hidden="true"></i> Username
+                    </label>
+                    <input type="text" name="UserName" id="UserName" placeholder=" Enter User Name" required="" />
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+                <div class="agile-field-txt">
+                    <label>
+                        <i class="fa fa-lock" aria-hidden="true"></i> password
+                    </label>
+                    <input type="password" name="Password" id="Password" placeholder="Enter Password" required="" />
+                    @Html.ValidationMessageFor(m => m.Password)
+
+                </div>
+                <!-- script for show password -->
+                <script>
+                    function myFunction() {
+                        var x=document.getElementById("myInput");
+                        if(x.type==="password") {
+                            x.type="text";
+                        } else {
+                            x.type="password";
+                        }
+                    }
+                </script>
+                <!-- //end script -->
+                <div class="w3ls-bot">
+                    <div class="switch-agileits">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                            keep me signed in
+                        </label>
+                    </div>
+                    <input type="submit" value="LOGIN">
+                </div>
+            </form>
+
+        }
+    </div>
+    <!-- //form ends here -->
+    <!--copyright-->
+    <!--//copyright-->
+</body>
+
+<script>
+    history.pushState(null,null,location.href);
+    window.onpopstate=function() {
+        history.go(1);
+    };
+</script>
+
+@*<h2>@ViewBag.Title.</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Log in" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Register", "Register") if you don't have a local account.
+                    </p>
+                }
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

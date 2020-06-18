@@ -1,0 +1,558 @@
+﻿@using JainMachinery.Models;
+@using JainMachinery.DAL;
+@{
+    ViewBag.Title = "Home Page";
+    List<ProductMaster> product = ViewData["masterproducts"] as List<ProductMaster>;
+    List<ProductVideos> video = ViewData["Videos"] as List<ProductVideos>;
+
+}
+
+<header class="page_header header_white toggler_xs_right section_padding_25">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 display_table">
+                <div class="header_left_logo display_table_cell">
+                    <a href="@Url.Action("Index","Home")" class="logo top_logo">
+
+                        <h3 style="font-size:xx-large"> <img src="~/Design/jainmachinelogo.png" style="height:60px;width:100px;" /> Jain Machiner<span class="highlight">Y</span> </h3>
+
+                    </a>
+                </div>
+                <div class="header_mainmenu display_table_cell text-center">
+                    <!-- main nav start -->
+                    <nav class="mainmenu_wrapper">
+                        <ul class="mainmenu nav sf-menu">
+                            <li class="active">
+                                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i>   Home</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("About", "Home")"> <i class="fa fa-user"></i>  About</a>
+                            </li>
+
+
+                            <li>
+                                <a href="@Url.Action("Products","Home")"> <i class="fa fa-cogs"></i> Products</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ProductDemo","Home")"> <i class="fa fa-play"></i> Product Demo</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ProductBrochures", "Home")"> <i class="fa fa-file-pdf-o"></i>Brochures</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("Contact","Home")"> <i class="fa fa-map-marker"></i>  Contacts</a>
+                            </li>
+                            <!-- eof contacts -->
+                        </ul>
+                    </nav>
+                    <!-- eof main nav -->
+                    <!-- header toggler --><span class="toggle_menu"><span></span></span>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<div>
+    <section class="intro_section page_mainslider ds" style="height:480px;">
+        <div class="flexslider vertical-nav" data-dots="false" data-nav="true">
+            <ul class="slides">
+                <li>
+
+                    <img src="~/Design/images/Banner/banner1.png" style="height:480px;" />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h5 class="text-uppercase thin"> Jain Machinery </h5>
+                                        </div>
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h2 class="text-uppercase thin"> <strong class="highlight">Commited</strong> To Super Quality </h2>
+                                        </div>
+
+
+                                    </div>
+                                    <!-- eof .slide_description -->
+                                </div>
+                                <!-- eof .slide_description_wrapper -->
+                            </div>
+                            <!-- eof .col-* -->
+                        </div>
+                        <!-- eof .row -->
+                    </div>
+                    <!-- eof .container -->
+                </li>
+
+                <li>
+                    <img src="~/Design/images/Banner/machine3.jpg" style="height:480px;" />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h5 class="text-uppercase thin"> Jain Machinery </h5>
+                                        </div>
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h2 class="text-uppercase thin"> <strong class="highlight2">Application</strong> Of technology </h2>
+                                        </div>
+
+                                    </div>
+                                    <!-- eof .slide_description -->
+                                </div>
+                                <!-- eof .slide_description_wrapper -->
+                            </div>
+                            <!-- eof .col-* -->
+                        </div>
+                        <!-- eof .row -->
+                    </div>
+                    <!-- eof .container -->
+                </li>
+
+                <li>
+                    <img src="~/Design/images/Banner/banner3.jpg" style="height:480px;" />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h5 class="text-uppercase thin"> Jain Machinery </h5>
+                                        </div>
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h2 class="text-uppercase thin"> <strong class="highlight2">Application</strong> Of technology </h2>
+                                        </div>
+
+                                    </div>
+                                    <!-- eof .slide_description -->
+                                </div>
+                                <!-- eof .slide_description_wrapper -->
+                            </div>
+                            <!-- eof .col-* -->
+                        </div>
+                        <!-- eof .row -->
+                    </div>
+                    <!-- eof .container -->
+                </li>
+
+                <li>
+                    <img src="~/Design/images/Banner/banner5.jpg" style="height:480px;" />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h5 class="text-uppercase thin"> Jain Machinery </h5>
+                                        </div>
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h2 class="text-uppercase thin"> <strong class="highlight3">Providing</strong> Best Products </h2>
+                                        </div>
+
+                                    </div>
+                                    <!-- eof .slide_description -->
+                                </div>
+                                <!-- eof .slide_description_wrapper -->
+                            </div>
+                            <!-- eof .col-* -->
+                        </div>
+                        <!-- eof .row -->
+                    </div>
+                    <!-- eof .container -->
+                </li>
+
+
+                <li>
+                    <img src="~/Design/images/Banner/banner4.jpg" style="height:480px;" />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h5 class="text-uppercase thin"> Jain Machinery </h5>
+                                        </div>
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h2 class="text-uppercase thin"> <strong class="highlight3">Providing</strong> Best Products </h2>
+                                        </div>
+
+                                    </div>
+                                    <!-- eof .slide_description -->
+                                </div>
+                                <!-- eof .slide_description_wrapper -->
+                            </div>
+                            <!-- eof .col-* -->
+                        </div>
+                        <!-- eof .row -->
+                    </div>
+                    <!-- eof .container -->
+                </li>
+
+                <li>
+                    <img src="~/Design/images/Banner/banner2.jpg" style="height:480px;" />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h5 class="text-uppercase thin"> Jain Machinery </h5>
+                                        </div>
+                                        <div class="intro-layer" data-animation="fadeInUp">
+                                            <h2 class="text-uppercase thin"> <strong class="highlight3">Providing</strong> Best Products </h2>
+                                        </div>
+
+                                    </div>
+                                    <!-- eof .slide_description -->
+                                </div>
+                                <!-- eof .slide_description_wrapper -->
+                            </div>
+                            <!-- eof .col-* -->
+                        </div>
+                        <!-- eof .row -->
+                    </div>
+                    <!-- eof .container -->
+                </li>
+
+
+            </ul>
+        </div>
+        <!-- eof flexslider -->
+    </section>
+
+
+    <section id="fuatures" class="ds columns_padding_0">
+        <div class="container-fluid">
+            <div class="row flex-row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="teaser media media-xxs-block inline-block cs hover_icon with_padding big_padding">
+                        <div class="media-left media-middle">
+                            <div class="size_big inline-block round light_bg_color thick_border_icon"> <i class="fa fa-truck highlight teaser_icon" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="media-body media-middle">
+                            <h4 class="text-uppercase bottommargin_10"><a href="#0">Shipping CrossAreas</a></h4>
+                            <p style="text-align:justify">We provides the product shipping facility at every possible places for our customer to out better services.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="teaser media media-xxs-block inline-block cs main_color2 hover_icon with_padding big_padding">
+                        <div class="media-left media-middle">
+                            <div class="size_big inline-block round light_bg_color thick_border_icon"> <i class="fa fa-user highlight2 teaser_icon" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="media-body media-middle">
+                            <h4 class="text-uppercase bottommargin_10"><a href="#0">Partnership Program</a></h4>
+                            <p style="text-align:justify">We make the best services for our customer to help them with best products.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="teaser media media-xxs-block inline-block cs main_color3 hover_icon with_padding big_padding">
+                        <div class="media-left media-middle">
+                            <div class="size_big inline-block round light_bg_color thick_border_icon"> <i class="fa fa-tags highlight3 teaser_icon" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="media-body media-middle">
+                            <h4 class="text-uppercase bottommargin_10"><a href="#0">Discounts &amp; Sale</a></h4>
+                            <p style="text-align:justify">We have multiple offers and discount to reach our maximum customers with our best products.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section id="about" class="ls  background_cover section_padding_top_150 section_padding_bottom_150">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-6 text-center">
+                    <img src="~/Design/images/Banner/machine4.jpg" style="height:300px;" />
+                </div>
+                <div class="col-sm-6 col-sm-6 text-center">
+
+                    <h2 class="section_header"> <span class="small">Welcome to</span> Jain Machiner<span class="highlight">Y</span> </h2>
+                    <p class="fontsize_20">
+                        Our product portfolio is comprised of the most trusted brands and we offering the finest customer service. We offer top quality products at reasonable prices, provide unparalleled technical assistance, and back it all up with outstanding customer
+                        support.
+                    </p>
+                    <p class="topmargin_50"> <a href="@Url.Action("About","Home")" class="theme_button color1 inverse">About us</a> </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="ds color parallax page_features section_padding_top_150 section_padding_bottom_150">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-5">
+                    <h2 class="section_header"> <span class="small">About</span> Jain Machiner<span class="highlight">Y</span> </h2>
+                    <p class="fontsize_20"> <strong>Jain Machinery</strong> helps manufacturers maximize the productivity they gain from their pneumatic tools, diaphragm pumps, chain hoists and related supplies. We dedicated to helping our customers andreduce operating costs. </p>
+                </div>
+                <div class="col-md-6 col-lg-offset-1">
+                    <div class="teaser media">
+                        <div class="media-left">
+                            <div class="teaser_icon size_small highlight"> <i class="fa fa-users"></i> </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="highlight text-uppercase">Our Vission </h4>
+                            <p> How all this mistakens idea of denouncing pleasures and completed account. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren. </p>
+                        </div>
+                    </div>
+                    <div class="teaser media">
+                        <div class="media-left">
+                            <div class="teaser_icon size_small highlight2"> <i class="fa fa-suitcase"></i> </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="highlight2 text-uppercase"> Our Mission </h4>
+                            <p> Idea denouncing pleasures and praisings pain was born great explorer. No sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy. </p>
+                        </div>
+                    </div>
+                    <div class="teaser media">
+                        <div class="media-left">
+                            <div class="teaser_icon size_small highlight3"> <i class="fa fa-star"></i> </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="highlight3 text-uppercase"> Machinery Equipments </h4>
+                            <p> Denouncing pleasures and was born work will give you a complete masters. Eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua vero eos et accusam. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="categories" class="ls section_padding_top_150 section_padding_bottom_150">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2 class="section_header"> <span class="small">Featured</span> Categories </h2>
+                </div>
+            </div>
+            <div class="row columns_margin_bottom_20">
+
+
+                @if (product != null)
+                {
+                    foreach (var p in product)
+                    {
+                        <div class="col-md-3 col-sm-6">
+                            <div class="vertical-item with_border product">
+                                <div class="item-media margin_0">
+
+                                    <img src="@Global.WebsiteUrl()@p.ProductImage" alt="Food Processing Machinery" style="height:300px;width:280px;" />
+                                    <div class="media-links"></div>
+                                </div> <a href="@Url.Action("AllProducts", "Home", new { ProductID = @p.ProductID })" class="bg_link highlight4link" style="height:80px;">@p.ProductName</a>
+                            </div>
+                        </div>
+
+
+                    }
+                    <br />
+                    <div class="row topmargin_30">
+                        <div class="col-sm-12 text-center"> <a href="@Url.Action("Products","Home")" class="theme_button color1 inverse">All Products</a> </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="vertical-item with_border product">
+                            <div class="item-media margin_0">
+
+                                <img src="~/Design/Food%20Machines/foodmachine.jpg" alt="Food Processing Machinery" style="height:300px;" />
+                                <div class="media-links"></div>
+                            </div> <a href="@Url.Action("FoodProcessingMachine","Home")" class="bg_link highlight4link">Food Processing Machine</a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="vertical-item with_border product">
+                            <div class="item-media margin_0">
+
+                                <img src="~/Design/Agriculter%20Machine/agriculter.jpg" alt="Agriculter Machines" style="height:300px;" />
+                                <div class="media-links"></div>
+                            </div> <a href="@Url.Action("AgriculerMachine","Home")" class="bg_link highlightlink">Agriculture</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="vertical-item with_border product">
+                            <div class="item-media margin_0">
+                                <img src="~/Design/SprayPumpsandGuns/spraypumps.jpg" alt="" style="height:300px;">
+
+                                <div class="media-links"></div>
+                            </div> <a href="@Url.Action("SprayPumsandGuns","Home")" class="bg_link highlight2link">Agro Spray Pump & Gun</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="vertical-item with_border product">
+                            <div class="item-media margin_0">
+
+                                <img src="~/Design/PumpandMotors/PumsandMotors.jpg" alt="Motors and Pumps" style="height:300px;" />
+                                <div class="media-links"></div>
+                            </div> <a href="@Url.Action("PumpsandMotors","Home")" class="bg_link highlight3link">Motors and Pumps</a>
+                        </div>
+                    </div>
+
+                    <div class="row topmargin_30">
+                        <div class="col-sm-12 text-center"> <a href="@Url.Action("Products","Home")" class="theme_button color1 inverse">All Products</a> </div>
+                    </div>
+                }
+
+
+
+            </div>
+            @*<div class="row topmargin_30">
+                    <div class="col-sm-12 text-center"> <a href="shop-right.html" class="theme_button color1 inverse">Go to shop</a> </div>
+                </div>*@
+        </div>
+    </section>
+    <div id="testimonials" class="ds color page_testimonials parallax section_padding_top_150 section_padding_bottom_150">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="owl-carousel testimonials-owl-dots" data-responsive-lg="3" data-responsive-md="3" data-responsive-sm="3" data-responsive-xs="3" data-center="true" data-loop="true" data-margin="10" data-touch-drag="false" data-mouse-drag="false">
+                        <div> <img src="~/Design/images/faces/02.jpg" alt="" /> </div>
+                        <div> <img src="~/Design/images/faces/03.jpg" alt="" /> </div>
+                        <div> <img src="~/Design/images/faces/01.jpg" alt="" /> </div>
+                    </div>
+                    <div class="owl-carousel testimonials-owl-content topmargin_20" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-responsive-xs="1" data-loop="true" data-margin="0" data-dots="true" data-nav="false">
+                        <blockquote class="text-center with_quote topmargin_0">
+                            <div class="item-meta">
+                                <h5> <span class="thin">Samuel</span> Kaisinger </h5>
+                            </div>
+                            <p>The goods have been well received! We are really satisfied with the service of International AElectriX. They help us to clear our confusion when choosing the products, fast delivery, and good after sales service.</p>
+                        </blockquote>
+                        <blockquote class="text-center with_quote topmargin_0">
+                            <div class="item-meta">
+                                <h5> <span class="thin">Maurice</span> Nygaard </h5>
+                            </div>
+                            <p>Just wanted to let you know how happy I was with your customer service and the products I received. I made a mistake by purchasing items using my personal account instead of my business account.</p>
+                        </blockquote>
+                        <blockquote class="text-center with_quote topmargin_0">
+                            <div class="item-meta">
+                                <h5> <span class="thin">Debra</span> Oliver </h5>
+                            </div>
+                            <p>ElectriX, I purchased some air tools via the website, I found their service and communication very efficient. I was kept informed thru the whole process in a timely manner.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="news" class="ls section_padding_top_150 section_padding_bottom_150" style="margin-top:-50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2 class="section_header"> <span class="small">Machines</span> Latest Demonstration </h2>
+                    <div class="owl-carousel topmargin_50" data-responsive-lg="3">
+
+
+                        @if (video != null)
+                        {
+                            foreach (var v in video)
+                            {
+                                <article class="vertical-item content-padding with_border rounded">
+                                    <div class="item-media top_rounded overflow_hidden">
+
+                                        <video controls="controls" style="height:200px;width:360px;">
+                                            <source src="@Global.WebsiteUrl()/@v.Video" type="video/mp4" />
+                                        </video>
+                                    </div>
+                                    <div class="item-content" style="height:150px;">
+                                        <h4 class="entry-title"> <a href="#">@v.Title</a> </h4>
+                                        <p style="text-align:justify">@v.Description</p>
+
+                                    </div>
+                                </article>
+                            }
+                        }
+                        else
+                        {
+                            <article class="vertical-item content-padding with_border rounded">
+                                <div class="item-media top_rounded overflow_hidden">
+
+                                    <video controls="controls" style="height:200px;width:360px;">
+                                        <source src="~/SubProducts/MachineDemo.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                                <div class="item-content">
+                                    <h4 class="entry-title"> <a href="#">Jain Machinery</a> </h4>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+
+                                </div>
+                            </article>
+                        }
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @*<section id="news" class="ls section_padding_top_150 section_padding_bottom_150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h2 class="section_header"> <span class="small">Blog</span> Latest news </h2>
+                        <div class="owl-carousel topmargin_50" data-responsive-lg="3">
+                            <article class="vertical-item content-padding with_border rounded">
+                                <div class="item-media top_rounded overflow_hidden">
+                                    <img src="~/Design/images/gallery/01.jpg" alt="">
+                                    <div class="entry-meta-corner main_bg_color"> <span class="date">06</span> <span class="small-text big-spacing">aug</span> </div>
+                                </div>
+                                <div class="item-content">
+                                    <h4 class="entry-title"> <a href="blog-single-right.html">At vero eos accusam et justo dolores</a> </h4>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                                    <p class="highlightlinks"> <a href="blog-single-right.html" class="read-more">read more</a> </p>
+                                </div>
+                            </article>
+                            <article class="vertical-item content-padding with_border rounded">
+                                <div class="item-media top_rounded overflow_hidden">
+                                    <img src="~/Design/images/gallery/02.jpg" alt="">
+                                    <div class="entry-meta-corner main_bg_color2"> <span class="date">04</span> <span class="small-text big-spacing">aug</span> </div>
+                                </div>
+                                <div class="item-content">
+                                    <h4 class="entry-title hover-color2"> <a href="blog-single-right.html">At vero eos accusam et justo dolores</a> </h4>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                                    <p class="highlight2links"> <a href="blog-single-right.html" class="read-more">read more</a> </p>
+                                </div>
+                            </article>
+                            <article class="vertical-item content-padding with_border rounded">
+                                <div class="item-media top_rounded overflow_hidden">
+                                    <img src="~/Design/images/gallery/03.jpg" alt="">
+                                    <div class="entry-meta-corner main_bg_color3"> <span class="date">01</span> <span class="small-text big-spacing">aug</span> </div>
+                                </div>
+                                <div class="item-content">
+                                    <h4 class="entry-title hover-color3"> <a href="blog-single-right.html">At vero eos accusam et justo dolores</a> </h4>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                                    <p class="highlight3links"> <a href="blog-single-right.html" class="read-more">read more</a> </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+
+</div>

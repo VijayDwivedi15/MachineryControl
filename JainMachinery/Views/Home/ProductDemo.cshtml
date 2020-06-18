@@ -1,0 +1,131 @@
+﻿@using JainMachinery.Models;
+@using JainMachinery.DAL;
+
+@{
+    ViewBag.Title = "ProductDemo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<ProductVideos> video = ViewData["Videos"] as List<ProductVideos>;
+}
+
+<header class="page_header header_white toggler_xs_right section_padding_25">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 display_table">
+                <div class="header_left_logo display_table_cell">
+                    <a href="@Url.Action("Index","Home")" class="logo top_logo">
+
+                        <h3 style="font-size:xx-large"> <img src="~/Design/jainmachinelogo.png" style="height:60px;width:100px;" /> Jain Machiner<span class="highlight">Y</span> </h3>
+
+                    </a>
+                </div>
+                <div class="header_mainmenu display_table_cell text-center">
+                    <!-- main nav start -->
+                    <nav class="mainmenu_wrapper">
+                        <ul class="mainmenu nav sf-menu">
+                            <li>
+                                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i>   Home</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("About", "Home")"> <i class="fa fa-user"></i>  About</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("Products","Home")"> <i class="fa fa-cogs"></i> Products</a>
+                            </li>
+
+                            <li class="active">
+                                <a href="@Url.Action("ProductDemo","Home")"> <i class="fa fa-play"></i> Product Demo</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ProductBrochures", "Home")"> <i class="fa fa-file-pdf-o"></i>Brochures</a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("Contact","Home")"> <i class="fa fa-map-marker"></i>  Contacts</a>
+                            </li>
+                            <!-- eof contacts -->
+                        </ul>
+                    </nav>
+                    <!-- eof main nav -->
+                    <!-- header toggler --><span class="toggle_menu"><span></span></span>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="page_breadcrumbs ds color parallax section_padding_top_75 section_padding_bottom_75">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="text-uppercase">Product Videos</h2>
+                <ol class="breadcrumb highlightlinks">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="active">Product Videos</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="ls section_padding_top_150 section_padding_bottom_150" style="margin-top:-80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="section_header"> <span class="small">Machines</span> Latest Demonstration </h2>
+                <div class="owl-carousel topmargin_50" data-responsive-lg="3">
+
+
+                    @if (video != null)
+                    {
+                        foreach (var v in video)
+                        {
+                            <article class="vertical-item content-padding with_border rounded">
+                                <div class="item-media top_rounded overflow_hidden">
+
+                                    <video controls="controls" style="height:200px;width:360px;">
+                                        <source src="@Global.WebsiteUrl()/@v.Video" type="video/mp4" />
+                                    </video>
+                                </div>
+                                <div class="item-content" style="height:150px;">
+                                    <h4 class="entry-title"> <a href="#">@v.Title</a> </h4>
+                                    <p style="text-align:justify">@v.Description</p>
+
+                                </div>
+                            </article>
+                        }
+                    }
+                    else
+                    {
+                        <article class="vertical-item content-padding with_border rounded">
+                            <div class="item-media top_rounded overflow_hidden">
+
+                                <video controls="controls" style="height:200px;width:360px;">
+                                    <source src="~/SubProducts/MachineDemo.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="item-content">
+                                <h4 class="entry-title"> <a href="#">Jain Machinery</a> </h4>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+
+                            </div>
+                        </article>
+                    }
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+﻿@using JainMachinery.Models;
+@using JainMachinery.DAL;
+@model JainMachinery.Models.ProductVideos
+@{
+    ViewBag.Title = "ProductVideos";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Design/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Design/css/animations.css" rel="stylesheet" />
+<link href="~/Design/css/fonts.css" rel="stylesheet" />
+<link href="~/Design/css/main.css" rel="stylesheet" />
+<link href="~/Design/css/shop.css" rel="stylesheet" />
+
+<section class="contact-section">
+
+    <div class="auto-container">
+        <!--Section Title-->
+        <div class="sec-title-one">
+            <h4 style="font-family:Arial">Add Product Video Here</h4>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+
+            <div class="col-sm-12 col-md-12 text-right m-b-20">
+                <a href="@Url.Action("AllProductVideos", "Admin", new { area="Admin"})" style="background-color:#fbacac;font-weight:bold;font-size:larger"> All Videos</a>
+            </div>
+        </div>
+
+       
+        <div class="contact-form default-form">
+
+            @using (Html.BeginForm("ProductVideos", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", id = "ProductVideos", role = "form", area = "Admin" }))
+            {
+
+                <form method="post" action="#" id="contact-form">
+
+                    <div class="row clearfix">
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                            <input id="Title" name="Title" placeholder="Enter Video Title" required type="text">
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                            <input id="Video" name="Video" placeholder="Enter Product Video"  required type="file">
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <textarea class="form-control" id="Description" name="Description" style="max-width:76%" placeholder="Enter Video Description" required cols="50" rows="2"></textarea>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <div class="text-center"><button type="submit" class="theme-btn btn-style-one">submit</button></div>
+                        </div>
+
+
+                    </div>
+                </form>
+
+            }
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+</section>
+

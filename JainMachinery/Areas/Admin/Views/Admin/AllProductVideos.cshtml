@@ -1,0 +1,152 @@
+﻿@using JainMachinery.Models;
+@using JainMachinery.DAL;
+@{
+    ViewBag.Title = "AllProductVideos";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    List<ProductVideos> video = ViewData["Videos"] as List<ProductVideos>;
+}
+
+<link href="~/Design/css/fonts.css" rel="stylesheet" />
+<div class="page-wrapper">
+    <div class="content">
+
+        <div class="row" style="margin-top:10px;">
+
+            <div class="col-sm-12 col-md-12 text-right m-b-20">
+                <a href="@Url.Action("Index", "Admin", new { area="Admin"})" class="btn btn-primary float-right btn-rounded"> Home</a>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:-10px;">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="" style="color:#481717;text-decoration:underline">All Videos</h4>
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered" id="allstaff">
+                                <thead>
+                                    <tr style="background-color: #2ba5f6; color: white;">
+                                        <th style=" padding: 5px;">Title</th>
+                                        <th style="padding: 5px;">Video</th>
+                                        <th style="padding: 5px;">Description</th>
+                                        <th style="padding: 5px;">Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (video != null)
+                                    {
+
+                                        foreach (var i in video)
+                                        {
+                                            <tr>
+                                                <td style="font-weight:bold">@i.Title</td>
+                                                <td style="font-weight: bold; text-align: center">
+                                                    <video controls="controls" style="height:150px;width:150px;">
+                                                        <source src="@Global.WebsiteUrl()/@i.Video" type="video/mp4" />
+                                                    </video>
+                                                </td>
+                                                <td>
+                                                   @i.Description
+                                                </td>
+                                               
+                                                <td>
+                                                    <a href="@Url.Action("DeleteVideo", "Admin", new { VideoID = i.VideoID, area = "Admin" })" data-togg data-toggle="modal" data-target="#delete_patient" data-myvalue="@i.VideoID" onclick="Setval('@i.VideoID')"><i class="fa fa-trash-o m-r-5" title="Delete"></i></a>
+
+
+
+                                                </td>
+
+                                            </tr>
+                                        }
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="delete_patient" class="modal fade delete-modal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <input type="text" id="PatientDid" style="display:none" />
+                    <img src="assets/img/sent.png" alt="" width="50" height="46">
+                    <h3>Are you sure want to delete this Video?</h3>
+                    <div class="m-t-20">
+                        <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-danger" onclick="DeleteVideo('')">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link href="~/AdminPanelDesign/sweetalert.css" rel="stylesheet" />
+<script src="~/AdminPanelDesign/sweetalert.js"></script>
+
+@Html.Hidden("RedirectToDelete", Url.Action("DeleteEventVideos", "Admin", new { area = "Admin" }))
+@Html.Hidden("RedirectToHome", Url.Action("AllProductVideos", "Admin", new { area = "Admin" }))
+
+<script type="text/javascript">
+    $(function() {
+        var msg='@TempData["example"]';
+        if(msg=='Deleted') {
+            sweetAlert({
+                title: "Deleted!",
+                text: "Video Deleted SUCCESSFULLY.",
+                type: "success"
+            },
+                                  function() {
+                                      var url=$("#RedirectToHome").val();
+                                      location.href=url;
+                                  });
+
+        }
+        else {
+
+
+        }
+    });
+
+</script>
+
+<script>
+    function Setval(id) {
+        document.getElementById('PatientDid').value=id;
+    }
+
+    function DeleteVideo() {
+        var VideoID=$('#PatientDid').val();
+        var url=$("#RedirectToDelete").val()+"?VideoID="+VideoID;
+        location.href=url;
+    }
+
+</script>

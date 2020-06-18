@@ -1,0 +1,216 @@
+﻿@using JainMachinery.Models;
+@using JainMachinery.DAL;
+@{
+    ViewBag.Title = "AllSubProducts";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    List<AllSubProdust> subproduct = ViewData["SubProduvts"] as List<AllSubProdust>;
+}
+ <link href="~/Design/css/fonts.css" rel="stylesheet" />
+<div class="page-wrapper">
+    <div class="content">
+
+        <div class="row" style="margin-top:10px;">
+
+            <div class="col-sm-12 col-md-12 text-right m-b-20">
+                <a href="@Url.Action("Index", "Admin", new { area="Admin"})" class="btn btn-primary float-right btn-rounded"> Home</a>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:-10px;">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="" style="color:#481717;text-decoration:underline">All Sub-Products</h4>
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered" id="allstaff">
+                                <thead>
+                                    <tr style="background-color: #2ba5f6; color: white;">
+                                        <th style=" padding: 5px;">Product Name</th>
+                                        <th style="padding: 5px;">Sub-Product Name</th>
+                                        <th style="padding: 5px;">Image</th>
+                                        <th style="padding: 5px;">Description</th>
+                                        <th style="padding: 5px;">Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (subproduct != null)
+                                    {
+
+                                        foreach (var i in subproduct)
+                                        {
+                                            <tr>
+                                                <td style="font-weight:bold">@i.ProductName</td>
+                                                <td style="font-weight:bold;color:red">@i.SubProductName</td>
+                                                <td>
+                                                    <a href="@Global.WebsiteUrl()~/SubProducts/@i.SubProductImage" target="_blank">
+                                                        <img src="@Global.WebsiteUrl()~/SubProducts/@i.SubProductImage" style="height:50px;width:100px;" />
+                                                    </a>
+                                                </td>
+                                                <td>@i.Description</td>
+                                                <td>
+                                                    <a href="#">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+
+
+                                                </td>
+
+                                            </tr>
+                                        }
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="delete_patient" class="modal fade delete-modal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <input type="text" id="JobDid" style="display:none" />
+                    <img src="~/Assessts/images/logo-2.png" alt="" width="80" height="80">
+                    <h3>Are you sure want to delete this Sub-Product?</h3>
+                    <div class="m-t-20">
+                        <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-danger" onclick="DeleteSubProduct('')">Delete</button>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/AdminPanelDesign/jquery.dataTables.min.js"></script>
+<script src="~/AdminPanelDesign/dataTables.bootstrap4.min.js"></script>
+<link href="~/AdminPanelDesign/sweetalert.css" rel="stylesheet" />
+<script src="~/AdminPanelDesign/sweetalert.js"></script>
+
+
+@Html.Hidden("RedirectToDelete", Url.Action("DeleteSubProduct", "Admin", new { area = "Admin" }))
+@Html.Hidden("RedirectToHome", Url.Action("AllSubProducts", "Admin", new { area = "Admin" }))
+
+
+<script type="text/javascript">
+    $(function() {
+        var msg='@TempData["example"]';
+        if(msg=='Deleted') {
+            sweetAlert({
+                title: "Deleted!",
+                text: "Sub-Product Deleted SUCCESSFULLY.",
+                type: "success"
+            },
+                                  function() {
+                                      var url=$("#RedirectToHome").val();
+                                      location.href=url;
+                                  });
+
+        }
+        else {
+
+
+        }
+    });
+
+</script>
+
+
+<script>
+
+
+    function Setval(id) {
+        document.getElementById('JobDid').value=id;
+    }
+
+
+    function DeleteSubProduct() {
+        var JobID=$('#JobDid').val();
+        var url=$("#RedirectToDelete").val()+"?JobID="+JobID;
+        location.href=url;
+    }
+
+</script>
+
+
+<script>
+    $('#allstaff thead tr').clone(true).appendTo('#allstaff thead');
+    var table=$('#allstaff').DataTable({
+        orderCellsTop: true,
+        fixedHeader: true
+    });
+    $('#allstaff thead tr:eq(1) th').each(function(i) {
+        var title=$(this).text().trim();
+        if(title=="Action") {
+            $(this).html('<div style="width:50px;"></div>');
+        }
+
+        else {
+            if(title=="Product Name") {
+                $(this).html('<input type="text" placeholder="Search '+title+'" style="width:150px;"/>');
+            }
+
+            else if(title=="Sub-Product Name"||title=="Image") {
+                $(this).html('<input type="text" placeholder="Search '+title+'" style="width:150px;"/>');
+            }
+
+
+            else if(title=="Description") {
+                $(this).html('<input type="text" placeholder="Search '+title+'" style="width:380px;"/>');
+
+            }
+
+            else {
+                $(this).html('<input type="text" placeholder="Search '+title+'" style="width:100px;"/>');
+            }
+
+        }
+
+
+        $('input',this).on('keyup change',function() {
+            if(table.column(i).search()!==this.value) {
+                table
+                    .column(i)
+                    .search(this.value)
+                    .draw();
+            }
+        });
+    });
+
+
+    $(document).ready(function() {
+        // Setup - add a text input to each footer cell
+
+    });
+    //$('#stock').dataTable({
+    //    fixedHeader: true
+    //});
+</script>
